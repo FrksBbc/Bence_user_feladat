@@ -33,6 +33,8 @@ include("connect.php");
 
 ?>
         <h3>Felhasználók</h3>
+        <a href='user-add.php' class='btn btn-primary btn-md center-block' style='margin-bottom:10px;'>Új
+            felhasználó</a>
         <table class="table table-hover">
             <tr>
                 <th>Név</th>
@@ -51,7 +53,9 @@ while($user = mysqli_fetch_assoc($result)) {
                 <td>{$user["created_at"]}</td>
 
                 <td><a href='user-details.php?id=" . $user["id"] . "' class='btn btn-success btn-md center-block' style='width:100px;margin-bottom:10px;'>Szerkesztés</a>
-                <a href='delete.php?id=" . $user["id"] . "' class='btn btn-danger btn-md center-block'style='width:100px;margin-bottom:10px;'>Törlés</a></>
+                <a href='delete.php?id=" . $user["id"] . "' class='btn btn-danger btn-md center-block'style='width:100px;margin-bottom:10px;'>Törlés</a>
+                </td>
+                
 
                 
             </tr>";

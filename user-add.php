@@ -67,7 +67,7 @@ if(isset($_POST["submitted"])) {
 <body>
 
     <div class="container mt-5">
-        <h3>Felhasználó szerkesztése</h3>
+        <h3>Felhasználó felvitele</h3>
         <?php
             if(isset($_SESSION["errors"]) && count($_SESSION["errors"]) > 0) {
                 print '<div class="alert alert-danger">';
@@ -87,19 +87,22 @@ if(isset($_POST["submitted"])) {
         <form class="mt-4" method="post">
             <div class="form-group">
                 <label for="name">Név</label>
-                <input type="text" name="name" class="form-control" value="<?php print $user["name"] ?? '' ?> ">
+                <input type="text" name="name" class="form-control"
+                    value="<?php print $_SESSION["tartalom"]["name"] ?? ''?>">
             </div>
             <div class=" form-group">
                 <label for="email">Email</label>
-                <input type="text" name="email" class="form-control" value="<?php print $user["email"] ?? '' ?>">
+                <input type="text" name="email" class="form-control"
+                    value="<?php print $_SESSION["tartalom"]["email"] ?? ''?>">
             </div>
             <div class=" form-group">
                 <label for="password">Jelszó</label>
-                <input type="text" name="password" class="form-control" value="<?php print $user["password"] ?? '' ?>">
+                <input type="text" name="password" class="form-control"
+                    value="<?php print $_SESSION["tartalom"]["password"] ?? ''?>">
             </div>
 
             <br>
-            <button class="mt-4 btn btn-success" name="submitted">Felvitel</button>
+            <button class=" mt-4 btn btn-success" name="submitted">Felvitel</button>
             <a href="javascript:history.go(-1)" class="mt-4 btn btn-secondary">Vissza</a>
 
         </form>
